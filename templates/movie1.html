@@ -1,0 +1,41 @@
+
+{% extends 'home.html' %} 
+{% load static %}
+
+	{% block content %}
+    
+<div style="">
+   <center> 
+   	<img width="1340px" height="65%" src="{% static 'g.webp' %}">
+                     
+    </div>
+    
+    <div style="font-weight: bold;font-family: cursive;display: flex;justify-content: space-between;font-size: 200%;">
+    	<div style="width:1000px;background-color: lightgrey;margin-top: 5px">
+    	Movies <br >
+    	
+        {%for movie in movieName%}
+            <form action="movieSynopsis" style="display:inline-block;">
+                <input type="text" name="movieName" value="{{movie}}" hidden>
+            <button style="cursor: pointer"><img src="static/{{movie}}.jpg" width="250px" height="300px" style="border-radius: 5px;">
+            </button>
+            </form>
+        {%endfor%}
+
+    	<!-- <a href="" ><img src="{%static 'dreamgirl.jpg'%}" width="250px" height="300px" style="border-radius: 5px;"></a>
+    	<a href="chhichore.html" ><img src="{%static 'chhichore.jpg'%}" width="250px" height="300px" style="border-radius: 5px;"></a>
+    	<a href="section375.html" ><img src="{%static 'section375.jpg'%}" width="250px" height="300px" style="border-radius: 5px;"></a>
+    	<a href="it2.html" ><img src="{%static 'it2.jpg'%}" width="250px" height="300px" style="border-radius: 5px;"></a>
+ -->
+        </div>
+
+        <div style="width:450px;height:300px;font-size: 30px;margin-top: 5px;padding-top: 10px;background-color: grey;text-align: center;" >
+    	 SIGN UP  <br> TO GET YOUR MOVIE TICKETS NOW<br><br>
+    	       <a href="signup" ><button style="width:200;height:50;border-radius:10px;background-color:black;color:cyan;font-weight: bold;" >SIGN UP</button>
+</a>  <br><br><br>
+<img src="static/rca.gif" width="420px" height="750px">
+
+
+         </div>
+    
+    </div>    {% endblock %}

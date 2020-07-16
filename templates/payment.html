@@ -1,0 +1,26 @@
+{%extends 'home.html'%}
+{% load static%}
+{% block content%}
+<center>
+	<br>
+	<br>
+<div style="font-size: 16px;line-height:1;border:2px dotted black;width: 40%;background-color:papayawhip"  >
+<h2>{{movie|title}}</h2>
+<img src="static/{{movie}}.jpg" width="120px" height="150px" style="border-radius: 2px;border: 1px solid black">
+<h3>{{date}} &nbsp  {{time}}</h3>
+<h3>{{theater}}</h3>
+<h3>{{count}} Seats selected : {{seat}}</h3>
+</div>
+<div style="font-size: 16px;line-height:1;border:2px dotted black;width:40%;background-color: khaki" >
+<h3>Proceed to PAY :&#8377 {{price}}</h3>
+</div>
+<div >
+  <form action="pay" >
+    <button name="pay" value="{{price}}" style="background-color:yellowgreen;color: black;font-weight: bold;width:100;height:30;cursor: pointer;">PAY</button>
+  </form>
+	
+</div>
+</center>
+
+
+{%endblock%}

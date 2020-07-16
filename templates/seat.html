@@ -1,0 +1,129 @@
+{%extends 'home.html'%}
+{% load static%}
+{% block content%}
+
+<html>
+<head>
+  <title></title>
+  
+</head>
+<body  >
+  
+
+  <script type="text/javascript">
+    
+    function sub()
+    {
+        {% for st in seat %}
+        document.getElementById("{{st}}").disabled = true;
+        document.getElementById("{{st}}").checked =true;
+      {%endfor%}
+    }
+    
+   
+  </script>
+
+<center> 
+  <div >
+    <h2>{{movie|upper}}<br/>{{display|upper}}</h2>
+    <h1>Please select your seats</h1>
+  </div>
+  
+  <div class="plane" style="font-size: 16px;line-height:3;background-color:pink" >
+
+  <h3>
+    &#8377 {{price}}
+  </h3>
+  <form action="seat" method="get" >
+
+{% for n in range %}
+
+<span>
+  {%if n == 4 %}
+  &nbsp &nbsp &nbsp
+  {% endif %}
+
+          <input type="checkbox" id="{{n}}A"  style="cursor: pointer;"   name="{{n}}A" />
+          <label for="{{n}}A">{{n}}A</label>
+        &nbsp
+</span>
+
+{%endfor%}
+<br>
+{% for n in range %}
+<span>
+  {%if n == 4 %}
+  &nbsp &nbsp &nbsp
+  {% endif %}
+
+          <input type="checkbox"id="{{n}}B" style="cursor: pointer;" name="{{n}}B" />
+          <label for="{{n}}B">{{n}}B</label>
+   &nbsp
+   </span>
+{%endfor%}
+
+<br>
+{% for n in range %}
+<span>
+     {%if n == 4 %}
+  &nbsp &nbsp &nbsp
+  {% endif %}
+
+          <input type="checkbox"id="{{n}}C" style="cursor: pointer;" name="{{n}}C" />
+          <label for="{{n}}C">{{n}}C</label>
+   &nbsp
+   </span>
+{%endfor%}
+
+<br>
+{% for n in range %}
+<span>
+    {%if n == 4 %}
+  &nbsp &nbsp &nbsp
+  {% endif %}
+      <input type="checkbox"id="{{n}}D" style="cursor: pointer;" name="{{n}}D" />
+          <label for="{{n}}D">{{n}}D</label>
+   &nbsp
+   </span>
+{%endfor%}
+
+<br>
+{% for n in range %}
+<span>
+   {%if n == 4 %}
+  &nbsp &nbsp &nbsp
+  {% endif %}
+       <input type="checkbox"id="{{n}}E" style="cursor: pointer;" name="{{n}}E" />
+          <label for="{{n}}E">{{n}}E</label>
+   &nbsp
+   </span>
+{%endfor%}
+
+<br>
+{% for n in range %}
+<span>
+    {%if n == 4 %}
+  &nbsp &nbsp &nbsp
+  {% endif %}
+      <input type="checkbox"id="{{n}}F" style="cursor: pointer;" name="{{n}}F" />
+          <label for="{{n}}F">{{n}}F</label>
+   &nbsp
+   </span>
+{%endfor%}
+<br>
+<b><u>Screen This Side</u></b>
+
+</br>
+ <input type="submit"id="submit" style="cursor: pointer;width: 150px;height: 30px" value="Confirm Booking" ></center>
+
+
+</form>
+<script type="text/javascript">
+  window.onload=sub;
+</script>
+</div>
+</body>
+</html>
+
+
+{%endblock%}

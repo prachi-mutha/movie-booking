@@ -1,0 +1,85 @@
+<html>
+<head>
+	<style>
+		span.a{
+			display:block;
+			width:1338;
+			height:75;
+			padding-top:6px;
+			border: 1px solid black;
+			background-color: black;
+			position: sticky;
+			margin: 0px;
+			top:0px;
+			left: 0px;
+
+		}
+		.font{
+			font-weight: bold;
+			text-decoration: none;
+			font-size:20;
+			font-family: arial;
+			color: cyan;
+			
+			word-spacing:15px;
+		}
+		.r{
+			float: right;
+			width: 200px;
+		}
+		html {
+  font-size: 16px;
+}
+
+.plane {
+  margin: 10px auto;
+  max-width: 600px;
+}
+
+ol {
+  list-style :none;
+  padding: 0;
+  margin: 0;
+}
+
+.seats {
+  display: flex;  
+}
+
+.seat {
+  display: flex;
+  padding: 4px;
+  position: relative;  
+ }
+		
+	</style>
+</head>
+<body>
+	<span class="a" >
+		<span style="font-family:calibri;font-weight: bold;font-size: 40;color: white;"><a href="/"><img src="static/trans.png" height="60px" width="60px"></a> Movie E-Tickets </span>
+		<span style="padding-left: 10px">
+		</span>
+		<span style="float: right;padding-top: 20px;color: white" >
+		<form action="search" style="display:inline-flex;">
+		<input type="search" name="searched" placeholder="search movie" id="s" >
+		<label for="s"><input type="button" value="Search" style="border-radius:5px;color:cyan;background-color: black" onclick="form.submit();"></label>
+	    </form>
+		 {%if authan %}
+		    <a href="signedout" ><input type="button" name="signout" value="SignOut" style="border-radius:5px;color:cyan;background-color: black"></a>
+		    <br><span style="float: right;padding-right:10px ">{{user|upper}}</span>
+		    {%else%}
+		    <a href="signin"><input type="button" name="signin" value="SignIn" style="border-radius:5px;color:cyan;background-color: black"></a>
+
+		    {%endif%} 	    </span>
+	</span>
+	
+	
+{% block content %}
+
+
+{% endblock %}
+
+</body>
+</html>
+
+

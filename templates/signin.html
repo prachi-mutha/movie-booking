@@ -1,0 +1,29 @@
+{% extends 'home.html' %}
+
+	{% block content %}
+	<div style="padding-top: 15px"></div>	
+	<center><div style="border: 1px solid black;width: 30%;height:300px;text-align:left;padding: 15px;font-weight: bold;background-color:black;color: cyan;border-radius: 5px" >
+		<center>Sign in for booking movie!!</center>
+		<form action="login_auth" method="post" >
+			{% csrf_token %}
+			<br><br>
+		Email address:<input type="email" name="email" class="r" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" required><br><br><br>
+		Password :<input type="Password" name="password" class="r" required><br><br><br>
+		<input type="submit" name="signin" value="signin"  class="r">
+	
+	    </form>
+	 <br><br>
+	<center>OR</center><br>
+	
+	<a href="signup" class="r" style="color:cyan">Create Account / Signup</a>
+	<div>
+		<br>
+		<h3>
+		{% for m in messages %}
+		{{m}}
+		{% endfor %}
+	</h3>
+	</div>
+	</div></center>
+	
+{% endblock %}

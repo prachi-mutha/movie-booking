@@ -1,0 +1,54 @@
+{%extends 'home.html'%}
+{% load static%}
+{% block content%}
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+
+</head>
+
+<body>
+
+
+<div style="">
+	
+   
+   	<video width="100%" height="50%" controls style="background-color: black"><source src="static/{{video}}.mp4" type="video/mp4">
+    </video>              
+                          
+</div>
+<div style="display: flex;">
+<div style="width:200px;border: 2px solid black;height: 250px;color: red;font-size:40px">
+  <img src="static/{{movie}}.jpg" width="200px" height="250px" style="border-radius: 5px;">
+  <br><center>❤ {{rating}}%</center>
+</div> 
+
+<div style="width:750px;margin-left: 20px;">
+<center><h2 style="color:cadetblue;font-family:forte;letter-spacing:4px;font-weight:100px;font-size:30px"> {{movie|upper}} 
+  <span style="font-size: 50px;color:salmon">&hearts;</span></h2></center>
+<div style="width:750px;border:1px solid grey;text-align: left;line-height:30px;border-width:10px;background-color: lightgrey">
+  <h3 style="text-align: left">
+    SYNOPSIS:
+
+  </h3>
+   {{synopsis}}
+<br><br>
+<h3 style="text-align: left">
+    USER REVIEW:
+
+  </h3>
+  {%for e,rev in review %}
+  <b>{{e}} &nbsp : &nbsp
+  {{rev |upper}}</b>
+  <br>
+  {%endfor%}
+</div>
+</div>
+{%if authan%}
+ <a href="login_auth" ><div style="float: right;"><img src="static/booknow.png" height="480px" width="350px" ></div></a>
+{%else%}
+<a href="signin" ><div style="float: right;"><img src="static/booknow.png" height="480px" width="350px" ></div></a>
+{%endif%}
+</div>
+   {%endblock%}

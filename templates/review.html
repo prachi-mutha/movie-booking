@@ -1,0 +1,90 @@
+{%extends "home.html"%}
+{% block content%}
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+
+<style type="text/css">
+   
+
+.rating {
+    font-size: 60px;
+    /*height: 170px;*/
+    line-height: 85px;
+}
+
+.rating1:hover:before {
+   content: "☹️";
+   position: absolute;
+    font-size: 85px;
+  margin-left: -25px;
+    
+}
+.rating2:hover:before {
+   content: "😐";
+   position: absolute;
+    font-size: 75px;
+  margin-left: -15px;
+   
+}
+.rating3:hover:before {
+   content: "🙂";
+   position: absolute;
+    font-size: 70px;
+  margin-left: -10px;
+}
+.rating4:hover:before {
+   content: "🤪";
+   position: absolute;
+  font-size: 75px;
+  margin-left: -15px;
+   
+}
+.rating5:hover:before {
+   content: "😍";
+   position: absolute;
+    font-size: 85px;
+  margin-left: -5px;
+  
+}
+</style>
+
+<script type="text/javascript">
+	function on(on)
+	{
+		document.getElementById(on).style.fontSize="85px";
+		document.getElementById("oe").style.pointerEvents="none";
+		document.getElementById("to").style.pointerEvents="none";
+		document.getElementById("thre").style.pointerEvents="none";
+		document.getElementById("fore").style.pointerEvents="none";
+		document.getElementById("fiv").style.pointerEvents="none";
+	
+	}
+</script>
+</head>
+
+<body>
+	<center>
+    <img src="static/lca.gif" width="1337" height="70%">
+		<h3>Payment successfull !! Check your Email for confirmation. ;) </h3>
+		<form action="review" target="_parent">
+<div class="rating" >
+<span style="font-size:30px;font-weight:bolder;"> RATE IT :</span><!-- 
+<button class="rating1"  >☹️</button><span class="rating2">😐</span><span class="rating3">🙂</span><span class="rating4">🤪</span><span class="rating5">😍</span> -->
+<input type="radio" name="rate" value="1" id="one" hidden><label for="one" class="rating1" id="oe" onclick="on('oe')" style="cursor: pointer" >☹️</label>
+<input type="radio" name="rate" value="2" id="two" hidden><label for="two" class="rating2" id="to" onclick="on('to')" style="cursor: pointer;">😐</label>
+<input type="radio" name="rate" value="3" id="three" hidden><label for="three" class="rating3" id="thre" onclick="on('thre')" style="cursor: pointer;">🙂</label>
+<input type="radio" name="rate" value="4" id="four" hidden><label for="four" class="rating4" id="fore" onclick="on('fore')" style="cursor: pointer;">🤪</label>
+<input type="radio" name="rate" value="5" id="five" hidden><label for="five" class="rating5" id="fiv" onclick="on('fiv')" style="cursor: pointer;">😍</label>
+</div>
+<div style="font-size:30px;font-weight:bolder;display:inline-flex;margin-left: 20px">
+  REVIEW :
+  <textarea name="review" style="width: 446px; margin: 0px; height: 100px;" placeholder="{{review}}"></textarea>
+  <br>
+    <input type="submit" name="addreview" value="Add Review" style="background-color:yellowgreen;color: black;font-weight: bold;cursor: pointer;"></form>
+</div>
+</center>
+</body>
+</html>
+{%endblock%}
